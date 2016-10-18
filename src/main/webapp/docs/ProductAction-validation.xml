@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE validators PUBLIC
+        "-//Apache Struts//XWork Validator 1.0.2//EN"
+        "http://struts.apache.org/dtds/xwork-validator-1.0.2.dtd">
+
+<validators>
+	<field name="bean.name">
+		<field-validator type="requiredstring">
+			<message>產品Name: 請勿空白</message>
+		</field-validator>
+	</field>
+	<field name="bean.price">
+		<field-validator type="double">
+			<param name="minExclusive">0.0</param>
+			<message>產品Price: 請勿空白/請大於0</message>
+		</field-validator>
+	</field>
+	<field name="bean.make">
+		<field-validator type="required">
+			<message>產品Make: 請勿空白</message>
+		</field-validator>
+		<field-validator type="date">
+			<param name="min">1970-01-01</param>
+			<param name="max">2016-05-26</param>
+			<message>產品Make: 請勿空白/請介於${min}-${max}</message>
+		</field-validator>
+	</field>
+	<field name="bean.expire">
+		<field-validator type="int">
+			<param name="min">1</param>
+			<param name="minExclusive">0.0</param>
+			<message>產品Expire: 請勿空白/請大於0</message>
+		</field-validator>
+	</field>
+</validators>
